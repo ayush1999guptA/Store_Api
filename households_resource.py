@@ -1,4 +1,4 @@
-from flask_restful import reqparse,Resourse
+from flask_restful import reqparse,Resource
 from households_model import ItemModel
 import sqlite3
 
@@ -9,15 +9,15 @@ class HouseHolds(Resource):
 		item=ItemModel.find_by_name(name)
 		if item:
 			return item.json()
-		else 
+		else :
 			return {'message':'item is not present in the store'}
 
 	def post(self,name):
 		item=ItemModel.find_by_name(name)
 		if item ==None:
 			parser=reqparse.RequestParser()
-			parser.add_argument('price'
-				type=int,
+			parser.add_argument('price',
+				type=float,
 				required=True,
 				help='this field cannot be left empty'
 				)
@@ -34,18 +34,18 @@ class HouseHolds(Resource):
 		if item !=None:
 			parser=reqparse.RequestParser()
 			parser.add_argument('price',
-				type=int,
-				requrired=True,
+				type=float,
+				required=True,
 				help='this field cannot remain empty'
 				)
 			data=parser.parse_args()
-			item.price=date['price']
+			item.price=data['price']
 			item.update()
 			return item.json(),202
 		else:
 			parser=reqparse.RequestParser()
 			parser.add_argument('price',
-				type=int,
+				type=float,
 				requrired=True,
 				help='this field cannot remain empty'
 				)
