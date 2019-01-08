@@ -1,10 +1,10 @@
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import jwt_required
-from households_resource import HouseHolds,HouseHold
-from electronic_resource import Electronics,Electronic
-from dairy_resource import Dairys,Dairy
-from groceries_resource import Groceries,Grocery
+from resource.households_resource import HouseHolds,HouseHold
+from resource.electronic_resource import Electronics,Electronic
+from resource.dairy_resource import Dairys,Dairy
+from resource.groceries_resource import Groceries,Grocery
 
 app=Flask(__name__)
 api=Api(app)
