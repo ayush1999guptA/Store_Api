@@ -4,6 +4,7 @@ from flask_jwt import jwt_required
 from households_resource import HouseHolds,HouseHold
 from electronic_resource import Electronics,Electronic
 from dairy_resource import Dairys,Dairy
+from groceries_resource import Groceries,Grocery
 
 app=Flask(__name__)
 api=Api(app)
@@ -16,6 +17,8 @@ api.add_resource(Electronic,'/electronics')
 api.add_resource(Electronics,'/electronics/<string:name>')
 api.add_resource(Dairy,'/dairy')
 api.add_resource(Dairys,'/dairy/<string:name>')
+api.add_resource(Grocery,'/grocery')
+api.add_resource(Groceries,'/grocery/<string:name>')
 
 if __name__=='__main__':
 	app.run(port=5000,debug=True)
