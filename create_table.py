@@ -8,9 +8,13 @@ create_households='CREATE TABLE IF NOT EXISTS household(id INTEGER PRIMARY KEY,n
 
 cursor.execute(create_households)
 
-create_meat='CREATE TABLE IF NOT EXISTS electronics(id INTEGER PRIMARY KEY,name text,price int)'
+create_electronics='CREATE TABLE IF NOT EXISTS electronics(id INTEGER PRIMARY KEY,name text,price int)'
 
-cursor.execute(create_meat)
+cursor.execute(create_electronics)
+
+create_dairy='CREATE TABLE IF NOT EXISTS dairy(id INTEGER PRIMARY KEY,name text,price int)'
+
+cursor.execute(create_dairy)
 
 
 connection.commit()

@@ -1,6 +1,6 @@
 import sqlite3
 
-class ElectronicsModel():
+class DairyModel():
 
 
 
@@ -15,7 +15,7 @@ class ElectronicsModel():
 	def find_by_name(cls,name):
 		connection=sqlite3.connect('data.db')
 		cursor=connection.cursor()
-		query='SELECT * FROM electronics WHERE name=?'
+		query='SELECT * FROM dairy WHERE name=?'
 		result=cursor.execute(query,(name,))
 		row=result.fetchone()
 		connection.close()
@@ -26,7 +26,7 @@ class ElectronicsModel():
 	def insert(self):
 		connection=sqlite3.connect('data.db')
 		cursor=connection.cursor()
-		query='INSERT INTO electronics VALUES(Null,?,?)'
+		query='INSERT INTO dairy VALUES(Null,?,?)'
 		cursor.execute(query,(self.name,self.price))
 		connection.commit()
 		connection.close()
@@ -34,7 +34,7 @@ class ElectronicsModel():
 	def update(self):
 		connection=sqlite3.connect('data.db')
 		cursor=connection.cursor()
-		query='UPDATE electronics SET price=?  WHERE name=?'
+		query='UPDATE dairy SET price=?  WHERE name=?'
 		cursor.execute(query,(self.price,self.name))
 		connection.commit()
 		connection.close()	
