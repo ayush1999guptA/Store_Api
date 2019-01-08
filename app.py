@@ -1,14 +1,14 @@
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import jwt_required
-from households_resource import HouseHolds
+from households_resource import HouseHolds,HouseHold
 
 app=Flask(__name__)
 api=Api(app)
 api.secret_key='talk_to_my_hand'
 
 
-
+api.add_resource(HouseHold,'/household')
 api.add_resource(HouseHolds,'/household/<string:name>')
 
 if __name__=='__main__':

@@ -8,6 +8,7 @@ create_households='CREATE TABLE IF NOT EXISTS household(id INTEGER PRIMARY KEY,n
 
 cursor.execute(create_households)
 
+
 connection.commit()
 
 connection.close()

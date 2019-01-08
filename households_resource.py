@@ -67,6 +67,17 @@ class HouseHolds(Resource):
 			else:
 				return{'message':'Item does not exists'}		
 
+class HouseHold(Resource):
+	def get(self):
+		connection=sqlite3.connect('data.db')
+		cursor=connection.cursor()
+		query='SELECT * FROM household'
+		result=cursor.execute(query)
+		items=[]
+		for row in result:
+			items.append({'name':row[1],'price':row[2]})
+		connection.close()
+		return {'items':items}	
 
 			
 										
