@@ -15,6 +15,9 @@ cursor.execute(create_dairy)
 create_groceries='CREATE TABLE IF NOT EXISTS groceries(id INTEGER PRIMARY KEY,name text,price int)'
 cursor.execute(create_groceries)
 
+create_users='CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,username text,password text)'
+cursor.execute(create_users)
+
 
 
 connection.commit()

@@ -10,7 +10,7 @@ class Dairys(Resource):
 		if item:
 			return item.json()
 		else :
-			return {'message':'item is not present in the store'}
+			return {'message':'item is not present in the store'},404
 
 	def post(self,name):
 		item=DairyModel.find_by_name(name)
@@ -27,7 +27,7 @@ class Dairys(Resource):
 			item.insert()
 			return item.json(),201
 		else:
-			return {'message':'this item already exists in the database.Try calling the put call'}
+			return {'message':'this item already exists in the database.Try calling the put call'},400
 
 	def put(self,name):
 		item=DairyModel.find_by_name(name)
@@ -63,9 +63,9 @@ class Dairys(Resource):
 				cursor.execute(query,(name,))
 				connection.commit()
 				connection.close()
-				return{'message':'Item deleted successfully'}
+				return{'message':'Item deleted successfully'},202
 			else:
-				return{'message':'Item does not exists'}		
+				return{'message':'Item does not exists'},404		
 
 class Dairy(Resource):
 	def get(self):

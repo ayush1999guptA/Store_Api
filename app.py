@@ -5,6 +5,7 @@ from resource.households_resource import HouseHolds,HouseHold
 from resource.electronic_resource import Electronics,Electronic
 from resource.dairy_resource import Dairys,Dairy
 from resource.groceries_resource import Groceries,Grocery
+from resource.user_resource import Userregistry
 
 app=Flask(__name__)
 api=Api(app)
@@ -19,6 +20,7 @@ api.add_resource(Dairy,'/dairy')
 api.add_resource(Dairys,'/dairy/<string:name>')
 api.add_resource(Grocery,'/grocery')
 api.add_resource(Groceries,'/grocery/<string:name>')
+api.add_resource(Userregistry,'/userregistry')
 
 if __name__=='__main__':
 	app.run(port=5000,debug=True)
