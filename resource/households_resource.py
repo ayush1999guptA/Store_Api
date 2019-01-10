@@ -1,4 +1,5 @@
 from flask_restful import reqparse,Resource
+from flask_jwt import jwt_required
 from models.households_model import ItemModel
 import sqlite3
 
@@ -12,6 +13,7 @@ class HouseHolds(Resource):
 		else :
 			return {'message':'item is not present in the store'},404
 
+	@jwt_required()		
 	def post(self,name):
 		item=ItemModel.find_by_name(name)
 		if item ==None:
@@ -29,6 +31,7 @@ class HouseHolds(Resource):
 		else:
 			return {'message':'this item already exists in the database.Try calling the put call'},400
 
+	@jwt_required()		
 	def put(self,name):
 		item=ItemModel.find_by_name(name)
 		if item !=None:
@@ -54,6 +57,7 @@ class HouseHolds(Resource):
 			item.insert()
 			return item.json(),201
 
+	@jwt_required()		
 	def delete(self,name):
 			item=ItemModel.find_by_name(name)
 			if item!=None:

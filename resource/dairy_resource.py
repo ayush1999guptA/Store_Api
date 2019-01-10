@@ -1,4 +1,5 @@
 from flask_restful import reqparse,Resource
+from flask_jwt import jwt_required
 from models.dairy_models import DairyModel
 import sqlite3
 
@@ -12,6 +13,7 @@ class Dairys(Resource):
 		else :
 			return {'message':'item is not present in the store'},404
 
+	@jwt_required()		
 	def post(self,name):
 		item=DairyModel.find_by_name(name)
 		if item ==None:
@@ -28,7 +30,8 @@ class Dairys(Resource):
 			return item.json(),201
 		else:
 			return {'message':'this item already exists in the database.Try calling the put call'},400
-
+	
+	@jwt_required()		
 	def put(self,name):
 		item=DairyModel.find_by_name(name)
 		if item !=None:
@@ -53,7 +56,8 @@ class Dairys(Resource):
 			item=DairyModel(name,data['price'])
 			item.insert()
 			return item.json(),201
-
+	
+	@jwt_required()		
 	def delete(self,name):
 			item=DairyModel.find_by_name(name)
 			if item!=None:

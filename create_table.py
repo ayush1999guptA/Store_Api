@@ -18,7 +18,8 @@ cursor.execute(create_groceries)
 create_users='CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,username text,password text)'
 cursor.execute(create_users)
 
-
+query='INSERT INTO users VALUES(NULL,?,?)'
+cursor.execute(query,('admin','therock'))
 
 connection.commit()
 
