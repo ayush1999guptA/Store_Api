@@ -11,9 +11,17 @@ welcome to my repository of my first project.Now let me introduce this project t
  - Electronics
 
 Now the categories can be accessed both the users and the employee .But,the only difference will the access provided to each of them.
+
+
 **#for users**
+
+
 Users will have restricted access to the database . The customer can only know what item is present in the store along with the price,discount available,and discounted price.
+
+
 **#for employee** 
+
+
 Now the employee will have full acccess to the the database and will have the following privileges
 
  - insert an item in a category
