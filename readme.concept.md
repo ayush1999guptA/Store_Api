@@ -18,7 +18,7 @@ Now the categories can be accessed both the users and the employee .But,the only
 **#for users**
 
 
-Users will have restricted access to the database . The customer can only know what item is present in the store along with the price,discount available,and discounted price.
+Users will have restricted access to the database . The customer can only know what item is present in the store of a category along with the price,discount available,and discounted price.
 
 
 **#for employee** 
@@ -35,6 +35,7 @@ Now the employee will have full acccess to the the database and will have the fo
  - insert another employee account to the database
  - change his/her own password  
  - delete the account of another employee
+ - see how many employee are currently in the database
  
 
 **#conclusion**
