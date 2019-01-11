@@ -7,6 +7,10 @@ from resource.dairy_resource import Dairys,Dairy
 from resource.groceries_resource import Groceries,Grocery
 from resource.user_resource import Userregistry,Users
 from security import authenticate,identity
+from discounts.dairy_discount import DairyDiscount
+from discounts.household_discount import HouseHoldDiscount
+from discounts.groceries_discount import GroceryDiscount
+from discounts.electronics_discount import ElectronicsDiscount
 
 
 app=Flask(__name__)
@@ -25,6 +29,11 @@ api.add_resource(Grocery,'/grocery')
 api.add_resource(Groceries,'/grocery/<string:name>')
 api.add_resource(Userregistry,'/userregistry')
 api.add_resource(Users,'/users')
+api.add_resource(DairyDiscount,'/discount/dairy')
+api.add_resource(HouseHoldDiscount,'/discount/household')
+api.add_resource(GroceryDiscount,'/discount/grocery')
+api.add_resource(ElectronicsDiscount,'/discount/electronics')
+
 
 if __name__=='__main__':
 	app.run(port=5000,debug=True)
