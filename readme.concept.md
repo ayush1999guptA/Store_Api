@@ -36,6 +36,8 @@ Now the employee will have full acccess to the the database and will have the fo
  
 
 **#conclusion**
+
+
  It is recommended for you to read readme.documentation fro brief documentation of the API for various endpoints through which the API is implemented and can use for you android/web application.
 
 																													    
