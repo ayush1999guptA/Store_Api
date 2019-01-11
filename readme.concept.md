@@ -35,7 +35,7 @@ Now the employee will have full acccess to the the database and will have the fo
  - insert another employee account to the database
  - change his/her own password  
  - delete the account of another employee
- - see how many employee are currently in the database
+ - see how many employee's are currently in the database
  
 
 **#conclusion**
