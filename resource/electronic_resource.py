@@ -25,7 +25,7 @@ class Electronics(Resource):
 				)
 			data=parser.parse_args()
 
-			item=ElectronicsModel(name,data['price'])
+			item=ElectronicsModel(name,data['price'],0,data['price'])
 			item.insert()
 			return item.json(),201
 		else:
@@ -53,7 +53,7 @@ class Electronics(Resource):
 				help='this field cannot remain empty'
 				)
 			data=parser.parse_args()
-			item=ElectronicsModel(name,data['price'])
+			item=ElectronicsModel(name,data['price'],0,data['price'])
 			item.insert()
 			return item.json(),201
 
@@ -79,7 +79,7 @@ class Electronic(Resource):
 		result=cursor.execute(query)
 		items=[]
 		for row in result:
-			items.append({'name':row[1],'price':row[2]})
+			items.append({'name':row[1],'price':row[2],'discount%':row[3],'discounted price':row[4]})
 		connection.close()
 		return {'items':items}	
 
